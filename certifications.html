@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Certifications — Abdelrahman Mohamed</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+  .cert-hero{padding-top:1rem;padding-bottom:1rem}
+
+  .cert-table{border:1px solid var(--line)}
+  .cert-row{
+    display:grid;grid-template-columns:3.2rem 1fr 12rem;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+    padding:1.1rem 1.4rem;
+    transition:background 0.2s;
+  }
+  .cert-row:last-child{border-bottom:none}
+  .cert-row:hover{background:var(--panel)}
+  .cert-row .ci{font-family:var(--f-mono);font-size:0.78rem;color:var(--ink-dim)}
+  .cert-row .cname{font-family:var(--f-display);font-weight:600;font-size:0.98rem}
+  .cert-row .cissuer{font-family:var(--f-mono);font-size:0.72rem;color:var(--ink-mid);text-align:right;letter-spacing:0.03em}
+
+  .cert-cats{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
+  .cat-chip{
+    font-family:var(--f-mono);font-size:0.68rem;letter-spacing:0.05em;
+    padding:0.4rem 0.85rem;border:1px solid var(--line-bright);color:var(--signal);
+    text-transform:uppercase;
+  }
+
+  @media (max-width:680px){
+    .cert-row{grid-template-columns:2.4rem 1fr;row-gap:0.3rem}
+    .cert-row .cissuer{grid-column:2;text-align:left;order:3}
+  }
+</style>
+</head>
+<body>
+
+<div id="statusbar">
+  <div class="sb-left">
+    <span><span class="sb-dot"></span>SYSTEM ONLINE</span>
+    <span class="sep">/</span>
+    <span>PAGE: CERTIFICATIONS</span>
+  </div>
+  <div class="sb-right"><span id="sb-clock" class="sb-clock">00:00:00</span></div>
+</div>
+<div id="progress-rail"><div id="progress-fill"></div></div>
+
+<header>
+  <a href="index.html" class="brand">ABDELRAHMAN MOHAMED<span class="brand-tag">v2.0</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <nav class="primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap cert-hero">
+    <div class="eyebrow"><span class="idx">09</span> CERTIFICATIONS</div>
+    <h1>11 credentials across networking, cloud, and AI.</h1>
+    <p class="lead" style="max-width:60ch;margin-top:1.2rem">
+      Formal certifications backing the practical work — covering hardware fundamentals, enterprise networking, cloud platforms, and applied AI.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <div class="cert-cats rv">
+      <span class="cat-chip">Networking</span>
+      <span class="cat-chip">Cloud</span>
+      <span class="cat-chip">Cybersecurity</span>
+      <span class="cat-chip">AI</span>
+      <span class="cat-chip">Hardware &amp; OS</span>
+      <span class="cat-chip">Service Management</span>
+    </div>
+
+    <div class="cert-table rv">
+      <div class="cert-row"><span class="ci">01</span><span class="cname">CompTIA A+</span><span class="cissuer">CompTIA</span></div>
+      <div class="cert-row"><span class="ci">02</span><span class="cname">CompTIA Network+</span><span class="cissuer">CompTIA</span></div>
+      <div class="cert-row"><span class="ci">03</span><span class="cname">CCNA — Cisco Certified Network Associate</span><span class="cissuer">Cisco</span></div>
+      <div class="cert-row"><span class="ci">04</span><span class="cname">ITIL 4 Foundation</span><span class="cissuer">Axelos</span></div>
+      <div class="cert-row"><span class="ci">05</span><span class="cname">AWS Cloud Practitioner</span><span class="cissuer">Amazon Web Services</span></div>
+      <div class="cert-row"><span class="ci">06</span><span class="cname">Microsoft Certified: Azure AI Fundamentals</span><span class="cissuer">Microsoft</span></div>
+      <div class="cert-row"><span class="ci">07</span><span class="cname">Rocheston Certified AI Engineer</span><span class="cissuer">Rocheston</span></div>
+      <div class="cert-row"><span class="ci">08</span><span class="cname">Introduction to Cybersecurity</span><span class="cissuer">Cisco Networking Academy</span></div>
+      <div class="cert-row"><span class="ci">09</span><span class="cname">Computer Hardware Basics</span><span class="cissuer">Cisco Networking Academy</span></div>
+      <div class="cert-row"><span class="ci">10</span><span class="cname">Operating System Basics</span><span class="cissuer">Cisco Networking Academy</span></div>
+      <div class="cert-row"><span class="ci">11</span><span class="cname">Python Essentials 1</span><span class="cissuer">Cisco Networking Academy</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Abdelrahman Mohamed. Built from scratch, no frameworks.</span>
+    <a href="mailto:shawkyabdulrahman@gmail.com">shawkyabdulrahman@gmail.com</a>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

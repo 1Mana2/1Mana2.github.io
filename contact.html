@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact — Abdelrahman Mohamed</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+  .contact-hero{padding-top:1rem}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.5rem}
+  .channel{
+    border:1px solid var(--line);background:var(--panel);
+    padding:1.8rem;text-decoration:none;color:inherit;
+    display:flex;flex-direction:column;gap:0.8rem;
+    transition:border-color 0.25s, transform 0.25s;
+  }
+  .channel:hover{border-color:var(--line-bright);transform:translateY(-3px)}
+  .channel .clabel{font-family:var(--f-mono);font-size:0.66rem;letter-spacing:0.1em;color:var(--ink-dim);text-transform:uppercase}
+  .channel .cvalue{font-family:var(--f-display);font-weight:600;font-size:1.02rem;word-break:break-word}
+  .channel .ccta{font-family:var(--f-mono);font-size:0.7rem;color:var(--signal);display:flex;align-items:center;gap:0.4rem;margin-top:0.3rem}
+
+  .avail-panel{
+    margin-top:3rem;border:1px solid var(--line);background:var(--panel);
+    padding:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.4rem;
+  }
+  .avail-left{display:flex;align-items:center;gap:0.9rem}
+  .avail-dot{width:10px;height:10px;border-radius:50%;background:var(--signal);box-shadow:0 0 12px var(--signal);animation:pulse 2.4s ease-in-out infinite}
+  .avail-text .t1{font-family:var(--f-display);font-weight:700;font-size:1.05rem}
+  .avail-text .t2{font-family:var(--f-mono);font-size:0.74rem;color:var(--ink-mid);margin-top:0.2rem}
+
+  @media (max-width:680px){
+    .contact-grid{grid-template-columns:1fr}
+    .avail-panel{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<div id="statusbar">
+  <div class="sb-left">
+    <span><span class="sb-dot"></span>SYSTEM ONLINE</span>
+    <span class="sep">/</span>
+    <span>PAGE: CONTACT</span>
+  </div>
+  <div class="sb-right"><span id="sb-clock" class="sb-clock">00:00:00</span></div>
+</div>
+<div id="progress-rail"><div id="progress-fill"></div></div>
+
+<header>
+  <a href="index.html" class="brand">ABDELRAHMAN MOHAMED<span class="brand-tag">v2.0</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <nav class="primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap contact-hero">
+    <div class="eyebrow"><span class="idx">10</span> CONTACT</div>
+    <h1>Let's talk.</h1>
+    <p class="lead" style="max-width:58ch;margin-top:1.2rem">
+      Open to internship and graduate opportunities in IT audit, cybersecurity, and software engineering, as well as collaborations on AI-driven projects. Reach out through any channel below.
+    </p>
+
+    <div class="contact-grid rv">
+      <a href="mailto:shawkyabdulrahman@gmail.com" class="channel">
+        <span class="clabel">Email</span>
+        <span class="cvalue">shawkyabdulrahman@gmail.com</span>
+        <span class="ccta">Send a message <span class="btn-arrow">&rarr;</span></span>
+      </a>
+      <a href="https://linkedin.com/in/abdelrahman-mohamed-43296b21b" target="_blank" rel="noopener" class="channel">
+        <span class="clabel">LinkedIn</span>
+        <span class="cvalue">linkedin.com/in/abdelrahman-mohamed</span>
+        <span class="ccta">View profile <span class="btn-arrow">&rarr;</span></span>
+      </a>
+      <a href="tel:+601128528141" class="channel">
+        <span class="clabel">Phone — Malaysia</span>
+        <span class="cvalue">+60 11-2852 8141</span>
+        <span class="ccta">Call <span class="btn-arrow">&rarr;</span></span>
+      </a>
+      <a href="tel:+966562406072" class="channel">
+        <span class="clabel">Phone — Saudi Arabia</span>
+        <span class="cvalue">+966 56 240 6072</span>
+        <span class="ccta">Call <span class="btn-arrow">&rarr;</span></span>
+      </a>
+    </div>
+
+    <div class="avail-panel rv">
+      <div class="avail-left">
+        <span class="avail-dot"></span>
+        <div class="avail-text">
+          <div class="t1">Currently available</div>
+          <div class="t2">Open to internships, graduate roles, and freelance collaborations</div>
+        </div>
+      </div>
+      <a href="mailto:shawkyabdulrahman@gmail.com" class="btn btn-fill">Email me directly <span class="btn-arrow">&rarr;</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Abdelrahman Mohamed. Built from scratch, no frameworks.</span>
+    <a href="mailto:shawkyabdulrahman@gmail.com">shawkyabdulrahman@gmail.com</a>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
