@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Reflection — Abdelrahman Mohamed</title>
+<meta name="description" content="Engineering in Society E-Portfolio reflection: self-introduction, SWOT analysis, Programme Outcome attainment, and conclusion for Abdelrahman Mohamed."/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+  .ref-hero{padding-top:1rem;padding-bottom:0.5rem}
+  .ref-hero p.lead{max-width:66ch}
+
+  /* sticky section tabs */
+  .ref-tabs{
+    position:sticky;top:90px;z-index:50;
+    display:flex;gap:0.5rem;flex-wrap:wrap;
+    padding:1.2rem 0;margin-bottom:1rem;
+    background:linear-gradient(var(--void) 78%, transparent);
+  }
+  .ref-tab{
+    font-family:var(--f-mono);font-size:0.68rem;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--ink-mid);text-decoration:none;
+    border:1px solid var(--line);padding:0.5rem 0.9rem;
+    transition:border-color 0.2s,color 0.2s,background 0.2s;
+  }
+  .ref-tab .ti{color:var(--signal);margin-right:0.4rem}
+  .ref-tab:hover,.ref-tab.active{border-color:var(--line-bright);color:var(--ink);background:var(--panel)}
+
+  .ref-block{border-top:1px solid var(--line);padding:4rem 0;scroll-margin-top:150px}
+  .ref-block:first-of-type{border-top:none}
+
+  /* ---- SWOT quadrant grid ---- */
+  .swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+  .swot-quad{padding:1.8rem 2rem;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+  .swot-quad:nth-child(1),.swot-quad:nth-child(2){border-top:none}
+  .swot-quad:nth-child(odd){border-left:none}
+  .swot-head{display:flex;align-items:center;gap:0.7rem;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)}
+  .swot-mark{
+    font-family:var(--f-mono);font-size:0.7rem;font-weight:600;width:26px;height:26px;
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line-bright);color:var(--signal);flex:none;
+  }
+  .swot-quad h3{font-size:1.02rem}
+  .swot-quad.threat .swot-mark{color:var(--warn);border-color:rgba(255,138,61,0.3)}
+  .swot-list{list-style:none;display:flex;flex-direction:column;gap:0.7rem}
+  .swot-list li{font-size:0.86rem;color:var(--ink-mid);line-height:1.7;padding-left:1.1rem;position:relative}
+  .swot-list li::before{content:'\2192';position:absolute;left:0;color:var(--signal);font-size:0.75rem}
+  .swot-quad.threat .swot-list li::before{color:var(--warn)}
+
+  @media (max-width:760px){
+    .swot-grid{grid-template-columns:1fr}
+    .swot-quad{border-left:none !important;border-top:1px solid var(--line) !important}
+    .swot-quad:first-child{border-top:none !important}
+  }
+
+  /* ---- PO table ---- */
+  .po-table{border:1px solid var(--line);margin-top:1.6rem}
+  .po-row{
+    display:grid;grid-template-columns:4.5rem 1fr 9rem;align-items:center;
+    border-bottom:1px solid var(--line);padding:0.75rem 1.3rem;
+  }
+  .po-row:last-child{border-bottom:none}
+  .po-row.head{background:var(--panel-raised)}
+  .po-row.head span{font-family:var(--f-mono);font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .po-row .pid{font-family:var(--f-mono);font-size:0.78rem;color:var(--signal)}
+  .po-row .parea{font-size:0.88rem;color:var(--ink)}
+  .po-row .pval{font-family:var(--f-mono);font-size:0.8rem;color:var(--ink-mid);text-align:right}
+
+  /* ---- PO meter grid (visual readout) ---- */
+  .po-meters{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 3rem;margin-top:2.4rem}
+  .po-meter .mtop{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:0.7rem;color:var(--ink-mid);margin-bottom:0.5rem}
+  .po-meter .mtop .mv{color:var(--signal)}
+  .po-meter .mbar{height:4px;background:var(--line);position:relative;overflow:hidden}
+  .po-meter .mbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--signal);box-shadow:0 0 8px var(--signal);transition:width 1.1s cubic-bezier(.16,1,.3,1)}
+  .po-meter.in .mbar i{width:100%}
+  @media (max-width:760px){ .po-meters{grid-template-columns:1fr} }
+
+  .po-sub{margin-top:3rem}
+  .po-sub h3{margin-bottom:0.7rem;font-size:1.08rem}
+  .po-sub p{max-width:70ch}
+
+  .close-quote{
+    border-left:2px solid var(--signal);padding-left:1.6rem;margin:2.6rem 0;
+    font-family:var(--f-display);font-size:1.25rem;font-weight:600;color:var(--ink);
+    max-width:56ch;line-height:1.5;
+  }
+</style>
+</head>
+<body>
+
+<div id="statusbar">
+  <div class="sb-left">
+    <span><span class="sb-dot"></span>SYSTEM ONLINE</span>
+    <span class="sep">/</span>
+    <span>PAGE: REFLECTION</span>
+  </div>
+  <div class="sb-right"><span id="sb-clock" class="sb-clock">00:00:00</span></div>
+</div>
+<div id="progress-rail"><div id="progress-fill"></div></div>
+
+<header>
+  <a href="index.html" class="brand">ABDELRAHMAN MOHAMED<span class="brand-tag">v2.0</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <nav class="primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="reflection.html">Reflection</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap ref-hero">
+    <div class="eyebrow"><span class="idx">11</span> ENGINEERING IN SOCIETY — E-PORTFOLIO</div>
+    <h1 style="max-width:18ch">Where the degree leaves me.</h1>
+    <p class="lead" style="margin-top:1.2rem">
+      This page is my reflection for the Engineers in Society module: a critical self-introduction, a SWOT analysis grounded in my actual projects and internship, my Programme Outcome (PO) attainment, and what I take into the next stage of my career.
+    </p>
+  </section>
+
+  <nav class="wrap ref-tabs">
+    <a href="#self-intro" class="ref-tab"><span class="ti">01</span>Self-Introduction</a>
+    <a href="#swot" class="ref-tab"><span class="ti">02</span>SWOT Analysis</a>
+    <a href="#po-attainment" class="ref-tab"><span class="ti">03</span>PO Attainment</a>
+    <a href="#conclusion" class="ref-tab"><span class="ti">04</span>Conclusion</a>
+  </nav>
+
+  <!-- ============ 1. SELF-INTRODUCTION ============ -->
+  <section id="self-intro" class="wrap ref-block">
+    <div class="eyebrow"><span class="idx">01</span> SELF-INTRODUCTION</div>
+    <h2 style="max-width:20ch">A Computer Engineering graduate who verifies before he trusts.</h2>
+
+    <p class="lead rv" style="margin-top:1.6rem">
+      I am a Computer Engineering graduate from Asia Pacific University (CGPA 3.43/4.0), and this E-Portfolio is my reflection on what four years of study, one professional internship, and eleven independently earned certifications have actually made of me as an engineer.
+    </p>
+    <p class="rv" style="max-width:70ch;margin-top:1.1rem">
+      Professionalism, for me, was not something a lecture defined — it was something I learned by doing IT Internal Audit work at Protiviti Middle East. Testing Identity and Access Management controls, reconciling SIEM asset records against reality, and drafting findings that a client would actually read taught me that an engineer's job does not end when a system works; it ends when you can prove it works, to someone who was not in the room while you built it. That experience, carried out across teams in Malaysia, Saudi Arabia and Egypt, also gave me a working sense of how standards, expectations and communication styles shift across cultures and jurisdictions, and why that has to be planned for rather than assumed.
+    </p>
+    <p class="rv" style="max-width:70ch;margin-top:1.1rem">
+      My exposure to emerging technology has been hands-on rather than theoretical: building a locally-hosted LLM pipeline for MeetNote so that meeting audio never has to leave a user's device, integrating an ESP32 sensor glove into PulseSense's real-time patient monitoring view, and designing the UI/UX for Genie, an AI campus assistant now used as a research project at APU. Eleven certifications — spanning networking, cloud, cybersecurity and applied AI — sit underneath that work, almost all of them pursued outside formal coursework because I wanted the fundamentals to be mine, not borrowed for one assignment.
+    </p>
+    <p class="rv" style="max-width:70ch;margin-top:1.1rem">
+      That habit is what I mean by independent, life-long learning: moving from campus IT support, to hardware engineering assistance, to AI software development, to formal audit practice in under two years, each time picking up the tools a new context demanded rather than waiting to be taught them. I do not think that habit is finished — it is the one part of this portfolio I expect to keep re-writing for the rest of my career.
+    </p>
+  </section>
+
+  <!-- ============ 2. SWOT ============ -->
+  <section id="swot" class="wrap ref-block">
+    <div class="eyebrow"><span class="idx">02</span> SWOT ANALYSIS</div>
+    <h2 style="max-width:22ch">An honest read on where I stand.</h2>
+    <p class="lead rv" style="margin-top:1.2rem;max-width:68ch">
+      Every point below is tied to something that actually happened during the degree — a specific project, internship engagement, or certification — not a general impression of myself.
+    </p>
+
+    <div class="swot-grid rv" style="margin-top:2rem">
+      <div class="swot-quad strength">
+        <div class="swot-head"><span class="swot-mark">S</span><h3>Strengths</h3></div>
+        <ul class="swot-list">
+          <li>Rare combination of domains: IT audit/compliance (Protiviti), applied AI (Whisper, Ollama), cloud (AWS, Azure) and mobile/embedded development (Flutter, ESP32), backed by 11 certifications rather than surface-level interest.</li>
+          <li>Evidence-based problem solving: I reconciled SIEM asset records against manufacturer/ground-truth data instead of trusting the dashboard, and built a statistical evaluation pipeline for MeetNote instead of assuming a plausible summary was a correct one.</li>
+          <li>Comfortable communicating up: I presented Genie's progress directly to the University's Vice President and drafted client-facing audit observations that needed to survive scrutiny from senior auditors.</li>
+        </ul>
+      </div>
+      <div class="swot-quad weakness">
+        <div class="swot-head"><span class="swot-mark">W</span><h3>Weaknesses</h3></div>
+        <ul class="swot-list">
+          <li>Breadth over depth: MeetNote, PulseSense and Genie are all still prototype or research-scale systems, not production-hardened ones.</li>
+          <li>My audit exposure was supervised, inside Protiviti's existing frameworks (SAMA CSF, ALR, RCM) — I have tested controls, not yet independently designed a compliance programme.</li>
+          <li>Documentation has occasionally lagged feature-building under deadline pressure, which is why MeetNote's evaluation methodology had to be strengthened retroactively before I trusted its results.</li>
+        </ul>
+      </div>
+      <div class="swot-quad opportunity">
+        <div class="swot-head"><span class="swot-mark">O</span><h3>Opportunities</h3></div>
+        <ul class="swot-list">
+          <li>Converting supervised audit exposure into independently held expertise through a certification such as CISA, building directly on the Protiviti engagement.</li>
+          <li>Regional demand across Malaysia, Saudi Arabia and Egypt for graduates who combine applied AI with cybersecurity/audit literacy — an intersection I already occupy.</li>
+          <li>Taking one current prototype (most likely MeetNote) to a genuinely production-grade standard as a portfolio centrepiece.</li>
+        </ul>
+      </div>
+      <div class="swot-quad threat">
+        <div class="swot-head"><span class="swot-mark">T</span><h3>Threats</h3></div>
+        <ul class="swot-list">
+          <li>Both fields I'm strongest in move fast — the specific LLM tooling I used will be superseded, and the threat landscape behind every SIEM finding keeps shifting.</li>
+          <li>Competition from Computer Science/Engineering peers who specialised earlier and narrower than I have.</li>
+          <li>Professional registration and certification pathways (CISA, chartered engineer status) require deliberate multi-year planning across jurisdictions, not something a degree provides automatically.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="rv" style="max-width:70ch;margin-top:2rem">
+      My strengths and opportunities point the same direction — cross-domain versatility backed by evidence — while my weaknesses and threats both come down to depth and independence, not capability. That is what tells me where to spend the next two years, and it is the thread running through my Programme Outcome evaluation below.
+    </p>
+  </section>
+
+  <!-- ============ 3. PO ATTAINMENT ============ -->
+  <section id="po-attainment" class="wrap ref-block">
+    <div class="eyebrow"><span class="idx">03</span> PO ATTAINMENT &amp; EVALUATION</div>
+    <h2 style="max-width:24ch">Programme outcomes, measured.</h2>
+    <p class="lead rv" style="margin-top:1.2rem;max-width:68ch">
+      My current attainment sits at 1.00 across all twelve Programme Outcomes. I am treating that as a baseline to interrogate, not a result to display — for each group below I have asked what specific evidence earns the score, and where full attainment still leaves real work to do.
+    </p>
+
+    <table class="po-table rv" style="width:100%;border-collapse:collapse;display:block">
+      <div class="po-row head">
+        <span>PO</span><span>Area</span><span style="text-align:right">Attainment</span>
+      </div>
+      <div class="po-row"><span class="pid">PO1</span><span class="parea">Engineering Knowledge</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO2</span><span class="parea">Problem Analysis</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO3</span><span class="parea">Design &amp; Development of Solutions</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO4</span><span class="parea">Investigation</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO5</span><span class="parea">Modern Tool Usage</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO6</span><span class="parea">The Engineer &amp; Society</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO7</span><span class="parea">Environment &amp; Sustainability</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO8</span><span class="parea">Ethics</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO9</span><span class="parea">Individual &amp; Teamwork</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO10</span><span class="parea">Communication</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO11</span><span class="parea">Project Management &amp; Finance</span><span class="pval">1.00</span></div>
+      <div class="po-row"><span class="pid">PO12</span><span class="parea">Life-Long Learning</span><span class="pval">1.00</span></div>
+    </table>
+
+    <div class="po-meters">
+      <div class="po-meter rv"><div class="mtop"><span>PO1 — Engineering Knowledge</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO2 — Problem Analysis</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO3 — Design &amp; Development</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO4 — Investigation</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO5 — Modern Tool Usage</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO6 — Engineer &amp; Society</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO7 — Environment &amp; Sustainability</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO8 — Ethics</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO9 — Individual &amp; Teamwork</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO10 — Communication</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO11 — Project Mgmt &amp; Finance</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+      <div class="po-meter rv"><div class="mtop"><span>PO12 — Life-Long Learning</span><span class="mv">1.00</span></div><div class="mbar"><i></i></div></div>
+    </div>
+
+    <div class="po-sub rv">
+      <h3>Engineering Knowledge &amp; Problem Analysis <span style="color:var(--ink-dim);font-family:var(--f-mono);font-size:0.7rem">PO1 · PO2</span></h3>
+      <p>Grounded in certifications I sought independently to lock in fundamentals — CCNA and Network+ for networking, ITIL 4 for service management, Azure AI Fundamentals for applied AI — and demonstrated by reconciling SIEM asset records at Protiviti and by building a multi-metric statistical evaluation (TF-IDF, TextRank, ROUGE, BERTScore, significance testing) for MeetNote rather than trusting a plausible output. A full score here means the fundamentals hold; it does not mean they stop needing to be re-tested as tools change.</p>
+    </div>
+    <div class="po-sub rv">
+      <h3>Design, Investigation &amp; Modern Tools <span style="color:var(--ink-dim);font-family:var(--f-mono);font-size:0.7rem">PO3 · PO4 · PO5</span></h3>
+      <p>Evidenced by three delivered systems — Genie's UI/UX and Flutter feature set, MeetNote's privacy-first local AI pipeline, and PulseSense's Flutter frontend integrated with an ESP32 sensor glove — using Whisper, Ollama, FastAPI, LogRhythm, AWS and Azure. All three remain portfolio-scale rather than production-hardened, which is the honest gap behind this score.</p>
+    </div>
+    <div class="po-sub rv">
+      <h3>Society, Sustainability &amp; Ethics <span style="color:var(--ink-dim);font-family:var(--f-mono);font-size:0.7rem">PO6 · PO7 · PO8</span></h3>
+      <p>Genie was built to help students navigate university services directly; MeetNote's fully local architecture was a deliberate choice to avoid unnecessary cloud inference and the data-privacy and energy cost that comes with it; and my internship placed me inside a regulated compliance environment (SAMA CSF, IAM controls, audit evidence standards) that made ethical practice procedural rather than aspirational. Standards differ across the jurisdictions I've worked in, so this is a score I keep re-checking, not one I consider settled.</p>
+    </div>
+    <div class="po-sub rv">
+      <h3>Teamwork, Communication &amp; Project Management <span style="color:var(--ink-dim);font-family:var(--f-mono);font-size:0.7rem">PO9 · PO10 · PO11</span></h3>
+      <p>Built through the PulseSense five-person team, mentoring junior technical assistants, presenting Genie to the University's Vice President, drafting client-facing audit findings, and running Audit List of Requirements trackers and Risk &amp; Control Matrices across concurrent Protiviti engagements. Professional-scale projects will be larger and higher-stakes than any of this, so scaling these skills up is an active goal, not a finished one.</p>
+    </div>
+    <div class="po-sub rv">
+      <h3>Independent &amp; Life-Long Learning <span style="color:var(--ink-dim);font-family:var(--f-mono);font-size:0.7rem">PO12</span></h3>
+      <p>The outcome I can evidence most concretely: eleven certifications across networking, cloud, cybersecurity and AI, almost entirely self-driven alongside my degree and internship. I read this score as describing a habit to sustain — most immediately, toward CISA and deeper cloud/security certifications — not a milestone already closed.</p>
+    </div>
+
+    <div class="close-quote rv">Full attainment is a baseline for professional practice, not a ceiling.</div>
+
+    <div class="po-sub rv">
+      <h3>Overall Evaluation &amp; Improvement</h3>
+      <p>Reaching 1.00 across all twelve outcomes is a genuine foundation, but three concrete steps define what comes next for me: taking at least one prototype-scale system, most likely MeetNote, to a production-grade standard; pursuing a globally recognised certification such as CISA that converts my supervised audit experience into independently held expertise; and deliberately confirming how my qualifications transfer across the different regulatory environments I've already worked in, rather than assuming they do.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. CONCLUSION ============ -->
+  <section id="conclusion" class="wrap ref-block">
+    <div class="eyebrow"><span class="idx">04</span> CONCLUSION</div>
+    <h2 style="max-width:20ch">Ready, with a clear list of what's next.</h2>
+    <p class="rv" style="max-width:70ch;margin-top:1.4rem">
+      This reflection has made one thing clearer than any transcript could: my strongest asset is not any single technical skill, it's the habit of verifying things before I trust them, carried from IT audit into AI engineering and back again. That habit produced eleven certifications, three delivered projects, and a five-month internship inside a regulated compliance environment, and it is what let me move between campus IT support, hardware assistance, AI development and formal audit work in under two years.
+    </p>
+    <p class="rv" style="max-width:70ch;margin-top:1.1rem">
+      My Programme Outcome evaluation shows full attainment across all twelve outcomes, but this portfolio has been an exercise in reading that as a floor rather than a finish line: depth in one specialism, independent rather than supervised responsibility, and cross-jurisdiction credential planning are the concrete gaps my SWOT analysis surfaced, and they are what I intend to close first.
+    </p>
+    <p class="rv" style="max-width:70ch;margin-top:1.1rem">
+      I am entering the engineering and technology profession with a solid ethical grounding from formal audit practice, real exposure to emerging AI and cloud tooling, and a demonstrated, self-directed pattern of learning. What I am not yet is finished — and I would rather be judged on that ongoing list than on a score that suggests I already am.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Abdelrahman Mohamed. Built from scratch, no frameworks.</span>
+    <a href="mailto:shawkyabdulrahman@gmail.com">shawkyabdulrahman@gmail.com</a>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+  // activate PO meters + section tab highlighting (page-specific, additive to site.js)
+  document.addEventListener('DOMContentLoaded', () => {
+    const meters = document.querySelectorAll('.po-meter');
+    if('IntersectionObserver' in window){
+      const mObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); mObs.unobserve(e.target); } });
+      }, { threshold: 0.3 });
+      meters.forEach(m => mObs.observe(m));
+    } else {
+      meters.forEach(m => m.classList.add('in'));
+    }
+
+    const tabs = document.querySelectorAll('.ref-tab');
+    const blocks = document.querySelectorAll('.ref-block');
+    if(tabs.length && blocks.length && 'IntersectionObserver' in window){
+      const tObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            tabs.forEach(t => t.classList.remove('active'));
+            const match = document.querySelector(`.ref-tab[href="#${e.target.id}"]`);
+            if(match) match.classList.add('active');
+          }
+        });
+      }, { threshold: 0.4, rootMargin: '-100px 0px -50% 0px' });
+      blocks.forEach(b => tObs.observe(b));
+    }
+  });
+</script>
+</body>
+</html>
